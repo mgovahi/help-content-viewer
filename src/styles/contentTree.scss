@@ -1,0 +1,22 @@
+$tree-topbar-height : 45px;
+
+.cnt-tree-wrapper {
+    width: 100%;
+    height: calc(100% - #{$tree-topbar-height});
+    overflow: auto;
+    border-top: 1px solid #eee;
+}
+
+.cnt-tree-topbar {
+    height: $tree-topbar-height;
+    padding: 4px;
+    input[type=text] {
+        border-radius: .28571429rem;
+        box-shadow: 0 0 0 0 transparent inset;
+        padding: .67861429em 1em;
+        background: #fff;
+        width:100%;
+        border: 1px solid rgba(34,36,38,.15);
+    }
+
+}

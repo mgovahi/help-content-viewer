@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <meta charset="UTF-8" />
+        <style>
+           html,body {
+                height: 100%;;
+            }
+            .viewer-container{
+                height: 100%;
+            }
+            
+        </style>
+        <script
+        src="https://code.jquery.com/jquery-3.1.0.js"
+        integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="
+        crossorigin="anonymous">
+      </script>
+        <script src="help-content-viewer.js" ></script>
+         </head>
+    <body>
+        <div class="viewer-container"></div>
+
+        <script>
+                var viewer = new helpContentViewer.Viewer({container: ".viewer-container"});
+                console.log(viewer);
+        </script>
+    </body>
+</html>
