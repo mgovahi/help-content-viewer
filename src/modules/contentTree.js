@@ -8,6 +8,7 @@ import styles from '../styles/ContentTree.scss';
 class ContentTree {
     constructor(options){
         this.data = options.data;
+        this.links = options.links;
         /* [
             'Simple root node',
             {
@@ -27,18 +28,26 @@ class ContentTree {
          this.$container = $(options.container);
     }
     loadContent() {
+        this.renderBottomBar();
         this.renderTopbar();
+       
         this.renderTreeWrapper();
         this.renderTree();
-      
+        
         
     }
     renderTopbar() {
-        let topbar = `<div class=${cx(styles["cnt-tree-topbar"])}></div>`
-        let $input = $(`<input type="text" >`);
+        let topbar = `<div class=${cx(styles["cnt-tree-topbar"])}></div>`;
         this.$topbar = $(topbar)
-                        .append($input)
-                        .appendTo(this.$container);
+        if(this.options && this.options.treeTitle){
+            let $ttl = $("<h4>"+this.options.treeTitle+"</h4>");
+            this.$topbar.append($ttl);
+
+        }
+        let $input = $(`<input type="text" >`);
+      
+        this.$topbar.append($input)
+                    .appendTo(this.$container);
         var to = false;
         var instance = this;
         $input.on("keyup",(eve)=>{
@@ -48,9 +57,23 @@ class ContentTree {
     }
     renderTreeWrapper() {
         let $wrapper = $(`<div class=${cx(styles["cnt-tree-wrapper"])}></div>`);
+      
         this.$container.append($wrapper);
         this.$treeWrapper = $wrapper;
       
+    }
+    renderBottomBar(){
+        let $bottomBar = $(`<div class=${cx(styles["cnt-bottom-bar"])}></div>`);
+          if(this.options && this.options.linksTitle){
+            let $ttl = $("<h4>"+this.options.linksTitle+"</h4>");
+            $bottomBar.append($ttl);
+
+        }
+        for(let i=0 ;i < this.links.length;i++){
+            let $atag = $(`<a href=${this.links[i].url} target="_blank">${this.links[i].title}</a>`);
+            $bottomBar.append($atag);
+        }
+        this.$container.append($bottomBar);
     }
     renderTree() {
         console.log( this.$treeWrapper);

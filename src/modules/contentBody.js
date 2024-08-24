@@ -13,7 +13,8 @@ class ContentBody {
     }
     renderContentWrapper() {
         var $wrapper = $(`<div class=${cx(styles["content-wrapper"])}></div>`);
-        this.$container.append($wrapper);
+        var $head = this.options.contentTitle ?   $(`<h4>${this.options.contentTitle}</h4>`) : "";
+        this.$container.append($head).append($wrapper);
         this.$contentWrapper = $wrapper;
     }
     setContent(content) {

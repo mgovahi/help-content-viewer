@@ -1,4 +1,4 @@
-$tree-topbar-height : 45px;
+$tree-topbar-height : 90px;
 
 .cnt-tree-wrapper {
     width: 100%;
@@ -10,6 +10,11 @@ $tree-topbar-height : 45px;
 .cnt-tree-topbar {
     height: $tree-topbar-height;
     padding: 4px;
+    h4{
+        margin-bottom: 0;
+        padding:10px 0;
+        font-weight: bold !important;
+    }
     input[type=text] {
         border-radius: .28571429rem;
         box-shadow: 0 0 0 0 transparent inset;
@@ -20,3 +25,25 @@ $tree-topbar-height : 45px;
     }
 
 }
+
+.cnt-bottom-bar{
+    border: 0;
+    background-color: #fff;
+    &:not(:empty){
+         padding: 5px 5px;
+    }
+    border-bottom: 1px solid #ccc;
+    a{
+        display: block;
+        margin-bottom: 5px;
+    }
+    h4{
+        margin-bottom: 0;
+        padding:10px 0;
+        font-weight: bold !important;;
+        
+    }
+}
+
+        
+        

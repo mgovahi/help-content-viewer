@@ -26,10 +26,13 @@ $topbar-height : 30px;
     }
     .sidebar {
         width: $sidebar-width;
-        border-left : 1px solid #eee;
+        border : 1px solid #ccc;
         height: 100%;
         background-color: #f2f2f2;
-     
+        display: flex;
+        flex-direction: column;
+        margin-left: 2px;
+      
     }
     .contentBody {
         flex: 1;
@@ -37,18 +40,23 @@ $topbar-height : 30px;
         width: 100%;
         height: 100%;
         overflow: auto;
+        border:1px solid #ccc;
+        > h4 {
+            font-weight: bold;
+        }
     }
 }
 
 .WindowModal-button {
     font-family: sans-serif !important;
 }
-.WindowModal-content{
-    height: 100%;;
-}
+.WindowModal {
 .WindowModal-content {
+    height: 100%;;
+    padding:2px;
     > div {
         width:100%;
         height: 100%;
     }
+}
 }
